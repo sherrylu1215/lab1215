@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Buttons</title>
+  <style>
+    /* 內部 CSS */
+    .my-button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-right: 5px; 
+    }
+
+    .btn1 {
+      background-color: lightpink;
+      color: #ffffff;
+    }
+
+    .btn2 {
+      background-color: violet;
+      color: #ffffff;
+    }
+    .blue {
+      background-color: blue;
+      color: #ffffff;
+    }
+    .green {
+      background-color: green;
+      color: #ffffff;
+    }
+    .rg {
+      background-color: skyblue;
+      color: #ffffff;
+    }
+    .button-container {
+      text-align: center;
+    }
+    .custom-button:hover {
+      transform: scale(1.1);
+    }
+    .result {
+      text-align: center; /* Center text */
+    }
+  </style>
+</head>
+<body>
+  <h1 class="button-container">Interactive Buttons</h1>
+  <div class="button-container">
+
+    <button class="custom-button my-button btn1" onclick="alert(firstname);">1st button</button>
+    <button class="custom-button my-button btn2" onclick="alert(secondname);">2nd button</button>
+    <button class="custom-button my-button blue" onClick="document.body.style.backgroundColor = 'blue';">blue</button>
+    <button class="custom-button my-button green" onclick="document.body.style.backgroundColor = 'green';">green</button>
+    <button class="custom-button my-button rg" onclick="document.body.style.backgroundColor = 'white';">Rest BG Color</button>
+
+  </div>
+  <div class="result">
+  <script>
+    var firstname;
+    var secondname;
+
+    // Function to prompt user for input until a valid number is entered
+    function promptForNumber(promptMessage) {
+      var input;
+      do {
+        input = window.prompt(promptMessage);
+      } while (isNaN(input)); // Repeat if the input is not a number
+      return input;
+    }
+
+    firstname = promptForNumber("Enter first integer");
+    secondname = promptForNumber("Enter second integer");
+    
+    if (firstname > secondname) {
+      document.write(firstname + " > " + secondname);
+      document.body.style.backgroundColor = 'lightblue';
+    } else if (firstname < secondname) {
+      document.write(firstname + " < " + secondname);
+      document.body.style.backgroundColor = 'orange';
+    } else {
+      document.write(firstname + " == " + secondname);
+      document.body.style.backgroundColor = 'lightyellow';
+    }
+  </script>
+  </div>
+</body>
+</html>
